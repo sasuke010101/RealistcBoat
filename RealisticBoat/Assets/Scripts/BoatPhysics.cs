@@ -70,10 +70,10 @@ using System.Collections.Generic;
 				//Debug
 
 				//Normal
-				Debug.DrawRay(triangleData.center, triangleData.normal * 3f, Color.white);
+//				Debug.DrawRay(triangleData.center, triangleData.normal * 3f, Color.white);
 
 				//Buoyancy
-				Debug.DrawRay(triangleData.center, buoyancyForce.normalized * -3f, Color.blue);
+//				Debug.DrawRay(triangleData.center, buoyancyForce.normalized * -3f, Color.blue);
 			}
 		}
 

@@ -22,19 +22,29 @@ public class WaterController : MonoBehaviour
 		current = this;
 	}
 
+	void Update()
+	{
+		Shader.SetGlobalFloat("_WaterScale", scale);
+		Shader.SetGlobalFloat("_WaterSpeed", speed);
+		Shader.SetGlobalFloat("_WaterDistance", waveDistance);
+		Shader.SetGlobalFloat("_WaterTime", Time.time);
+		Shader.SetGlobalFloat("_WaterNoiseStrength", noiseStrength);
+		Shader.SetGlobalFloat("_WaterNoiseWalk", noiseWalk);
+	}
+
 	//Get the y coordinate from whatever wavetype we are using
 	public float GetWaveYPos(Vector3 position, float timeSinceStart)
 	{
-		//if (isMoving)
-		//{
-		//return WaveTypes.SinXWave(position, speed, scale, waveDistance, noiseStrength, noiseWalk, timeSinceStart);
-		//}
-		//else
-		//{
-		//return 0f;
-		//}
-
+		if (isMoving)
+		{
+			return WaveTypes.SinXWave(position, speed, scale, waveDistance, noiseStrength, noiseWalk, timeSinceStart);
+		}
+		else
+		{
 		return 0f;
+		}
+
+//		return 0f;
 	}
 
 	//Find the distance from a vertice to water
